@@ -16,6 +16,16 @@ return new class extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->text('description');
+            $table->string('class');
+
+            //STATS
+            $table->unsignedInteger('tier');
+            $table->unsignedInteger('might_pool');
+            $table->unsignedInteger('speed_pool');
+            $table->unsignedInteger('int_pool');
+            //STATS
+
+            // CHIAVI
             $table->foreignId('descriptor_id')->constrained();
             $table->foreignId('focus_id')->constrained();
             $table->timestamps();
