@@ -16,6 +16,10 @@ class CharacterSeeder extends Seeder
      */
    public function run(): void
     {
+        $campaign_unoId = DB::table('campaigns')->where('title', 'Chi me lo fa fare?')->value('id') ?? 1;
+        $campaign_dueId = DB::table('campaigns')->where('title', 'Morningstar')->value('id') ?? 2;
+        $campaign_treId = DB::table('campaigns')->where('title', 'Campagna 3')->value('id') ?? 3;
+        $campaign_quattroId = DB::table('campaigns')->where('title', 'E qua?')->value('id') ?? 4;
         
         $charmanteId = DB::table('descriptors')->where('name', 'Charmante')->value('id') ?? 1;
         $intelligenteId = DB::table('descriptors')->where('name', 'Intelligente')->value('id') ?? 2;
@@ -37,7 +41,8 @@ class CharacterSeeder extends Seeder
                 'intellect_pool' => 10,
                 'descriptor_id' => $forteId,
                 'focus_id' => $furiaId,
-                'notes' => 'Un Glaive possente nato tra le rovine del Nono Mondo, sempre in prima linea durante le spedizioni.',
+                'campaign_id' => $campaign_unoId,
+                'background' => 'Un Glaive possente nato tra le rovine del Nono Mondo, sempre in prima linea durante le spedizioni.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -50,7 +55,8 @@ class CharacterSeeder extends Seeder
                 'intellect_pool' => 18,
                 'descriptor_id' => $intelligenteId,
                 'focus_id' => $fulminiId,
-                'notes' => 'Studiosa dei manufatti antichi, in grado di canalizzare cariche energetiche e svelare i segreti degli artefatti.',
+                'campaign_id' => $campaign_dueId,
+                'background' => 'Studiosa dei manufatti antichi, in grado di canalizzare cariche energetiche e svelare i segreti degli artefatti.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -63,7 +69,8 @@ class CharacterSeeder extends Seeder
                 'intellect_pool' => 11,
                 'descriptor_id' => $lestoId,
                 'focus_id' => $illusioneId,
-                'notes' => 'Tuttofare sfuggente, usa inganni visivi e rapidità di mano per sopravvivere nelle steppe selvagge.',
+                'campaign_id' => $campaign_treId,
+                'background' => 'Tuttofare sfuggente, usa inganni visivi e rapidità di mano per sopravvivere nelle steppe selvagge.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -76,7 +83,8 @@ class CharacterSeeder extends Seeder
                 'intellect_pool' => 16,
                 'descriptor_id' => $charmanteId,
                 'focus_id' => $fiammeId,
-                'notes' => 'Diplomatica carismatica e pericolosa, capace di manipolare le menti e avvolgersi nel fuoco quando messa alle strette.',
+                'campaign_id' => $campaign_quattroId,
+                'background' => 'Diplomatica carismatica e pericolosa, capace di manipolare le menti e avvolgersi nel fuoco quando messa alle strette.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

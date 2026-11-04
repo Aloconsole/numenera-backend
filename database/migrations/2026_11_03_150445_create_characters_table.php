@@ -14,20 +14,20 @@ return new class extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('lastname');
-            $table->text('description');
-            $table->string('class');
+            $table->text('background');
+            $table->string('type');
 
             //STATS
             $table->unsignedInteger('tier');
             $table->unsignedInteger('might_pool');
             $table->unsignedInteger('speed_pool');
-            $table->unsignedInteger('int_pool');
+            $table->unsignedInteger('intellect_pool');
             //STATS
 
             // CHIAVI
             $table->foreignId('descriptor_id')->constrained();
             $table->foreignId('focus_id')->constrained();
+            $table->foreignId('campaign_id')->constrained();
             $table->timestamps();
         });
     }

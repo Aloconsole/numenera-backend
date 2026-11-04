@@ -35,6 +35,11 @@
                                 Personaggi
                             </a>
                         </li>
+                        <li class="nav-item mx-2">
+                            <a href="{{ route('campaigns.index') }}">
+                                Campagne
+                            </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             DescriptorSeeder::class,
             FocusSeeder::class,
+            CampaignSeeder::class,
             CharacterSeeder::class,
         ]);
     }
