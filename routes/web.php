@@ -17,4 +17,4 @@ Route::get('/character/{character}', [CharactersAdminController::class, 'view'])
 
 // CAMPAGNE
 Route::get('/campaigns', [CampaignAdminController::class, 'index'])->name('campaigns.index');
-Route::get('/campaign/{campaign}', [CampaignAdminController::class, 'view'])->name('campaigns.view');
+Route::get('/campaign/{campaign}', [CampaignAdminController::class, 'view'])->name('campaign.view');

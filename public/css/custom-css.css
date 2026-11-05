@@ -1,0 +1,30 @@
+/* primary-custom-color: #432d72; */
+/* secondary-custom-color: #740668; */
+
+#app {
+    height: 100vh;
+    background-color: #432d72;
+}
+
+button {
+    background-color: #432d72 !important;
+    border: #432d72;
+}
+
+a {
+    color: #740668 !important;
+    text-decoration: none !important;
+}
+
+a:active {
+    color: #432d72 !important;
+}
+
+h1 {
+    color: #fff !important;
+}
+
+.character {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}

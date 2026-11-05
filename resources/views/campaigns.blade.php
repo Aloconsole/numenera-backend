@@ -9,18 +9,23 @@
     <div class="row">
         @foreach ($campaigns as $campaign)
             <div class="col-md-3 col-sm-12 col-lg-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h2>{{ $campaign->title }} </h2>
-                        <div class="card-description">
-                            @forelse ($campaign->characters as $character)
-                                {{ $character->name }}
-                            @empty
-                                <p>Nessun personaggio attivo per questa campagna.</p>
-                            @endforelse
+                <a href=" {{ route('campaign.view', $campaign) }} ">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>{{ $campaign->title }} </h2>
+                            <div class="card-description">
+                                @forelse ($campaign->characters as $character)
+                                    {{ $character->name }}
+                                @empty
+                                    <p>Nessun personaggio attivo per questa campagna.</p>
+                                @endforelse
+                            </div>
+                            @if ($campaign->is_active == true)
+                                <span class="bg-primary p-1 text-white">Campagna Attiva</span>
+                            @endif
                         </div>
-                    </div>
-                </div>    
+                    </div>    
+                </a>
                         {{-- <a href="{{ route('campaign.view', $campaign) }}"></a> --}}
             </div>
         @endforeach

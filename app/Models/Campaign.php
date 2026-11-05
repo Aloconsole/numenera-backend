@@ -13,7 +13,8 @@ class Campaign extends Model
     protected $fillable = 
     [
         'title',
-        'desc'
+        'desc',
+        'is_active'
     ];
 
     public function characters() {

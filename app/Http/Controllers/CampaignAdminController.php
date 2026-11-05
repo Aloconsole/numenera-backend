@@ -14,6 +14,6 @@ class CampaignAdminController extends Controller
 
     public function view(Campaign $campaign) {
         $campaign = $campaign->load('characters');
-        return view('single-campaign');
+        return view('single-campaign', compact('campaign'));
     }
 }
